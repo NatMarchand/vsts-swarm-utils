@@ -1,0 +1,40 @@
+{
+    "manifestVersion": 1,
+    "id": "swarm-utils",
+    "name": "Swarm Utils",
+    "version": "0.0.9",
+    "publisher": "natmarchand",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Tools for Docker Swarm",
+    "categories": [
+        "Build and release"
+    ],
+
+    "files": [
+        {
+            "path": "WatchStackDeploymentV0/node_modules"
+        },
+        {
+            "path": "WatchStackDeploymentV0/index.js"
+        },
+        {
+            "path": "WatchStackDeploymentV0/task.json"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "WatchStackDeploymentV0"
+            }
+        }
+    ]
+}

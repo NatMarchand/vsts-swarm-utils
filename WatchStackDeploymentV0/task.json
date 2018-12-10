@@ -1,0 +1,50 @@
+{
+    "id": "0CB7F1D3-3BF2-412E-86B8-4430D8331B55",
+    "name": "WatchStackDeployment",
+    "friendlyName": "Watch Stack Deployment",
+    "description": "Watch a docker stack deployment",
+    "helpMarkDown": "",
+    "category": "Build",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "author": "Nathanael Marchand",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 5
+    },
+    "demands": [],
+    "preview": true,
+    "releaseNotes": "",
+    "groups": [{
+        "name": "advanced",
+        "displayName": "Advanced Options",
+        "isExpanded": false
+    }],
+    "inputs": [{
+            "name": "stackName",
+            "type": "string",
+            "label": "Stack Name",
+            "defaultValue": null,
+            "required": true,
+            "helpMarkDown": "The name of the stack to watch."
+        },
+        {
+            "name": "dockerHostEndpoint",
+            "type": "connectedService:dockerhost",
+            "label": "Docker host service connection",
+            "helpMarkDown": "Select a Docker host service connection. Defaults to the agent's host.",
+            "groupName": "advanced"
+        }
+    ],
+    "outputVariables": [],
+    "instanceNameFormat": "Watch stack $(stackName) deployment",
+    "showEnvironmentVariables": true,
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}
